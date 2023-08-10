@@ -18,6 +18,26 @@ db.createCollection("users", {
                 "email": {
                     "bsonType": "string",
                     "description": "'email' el email es incorrecto"
+                },
+                "email_verified_at": {
+                    "bsonType":  ["date", "null"],
+                    "description": "'email_verified_at' el email_verified_at es incorrecto"
+                },
+                "estado": {
+                    "bsonType": "number",
+                    "description": "'estado' el estado es incorrecto"
+                },
+                "created_by": {
+                    "bsonType":  ["date", "null"],
+                    "description": "'created_by' el created_by es incorrecto"
+                },
+                "updated_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'updated_at' el updated_at es incorrecto"
+                },
+                "deleted_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'deleted_at' el deleted_at es incorrecto"
                 }
             }
         }
@@ -28,140 +48,140 @@ db.users.insertMany([
         _id: 11,
         nombre: 'juan0',
         email: 'juan0@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 12,
         nombre: 'juan1',
         email: 'juan1@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 13,
         nombre: 'juan2',
         email: 'juan2@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 14,
         nombre: 'juan3',
         email: 'juan3@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 15,
         nombre: 'juan4',
         email: 'juan4@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 16,
         nombre: 'juan5',
         email: 'juan5@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 17,
         nombre: 'juan6',
         email: 'juan6@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 18,
         nombre: 'juan7',
         email: 'juan7@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 19,
         nombre: 'juan8',
         email: 'juan8@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
         _id: 20,
         nombre: 'juan9',
         email: 'juan9@hotmail.com',
-        email_verified_at: currentDate,
+        email_verified_at: new Date(),
         estado: 1,
         created_by: null,
         update_by: null,
         foto: null,
         password: '12345',
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     }
 ]);
@@ -176,8 +196,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 16,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -187,8 +207,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 14,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -198,8 +218,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 13,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -209,8 +229,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 20,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -220,8 +240,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 19,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -231,8 +251,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 11,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -242,8 +262,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 12,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -253,8 +273,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 11,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -264,8 +284,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 11,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
@@ -275,8 +295,8 @@ db.productos.insertMany([
         estado: 1,
         created_by: 19,
         update_by: null,
-        created_at: currentDate,
-        updated_at: currentDate,
+        created_at: new Date(),
+        updated_at: new Date(),
         deleted_at: null
     },
     {
