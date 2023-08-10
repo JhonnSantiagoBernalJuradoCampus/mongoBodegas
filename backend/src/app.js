@@ -6,5 +6,5 @@ const app = express();
 
 const config = JSON.parse(process.env.MY_CONFIG);
 app.listen(config, ()=>{
-    console.log(`http://${config.hostname}:${config.port}`)
-})
+    console.log(`http://${config.hostname}:${config.port}`);
+});
