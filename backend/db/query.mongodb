@@ -187,7 +187,54 @@ db.users.insertMany([
 ]);
 
 use("db_bodegas");
-db.createCollection("productos");
+db.createCollection("productos", {
+    validator: {
+        $jsonSchema: {
+            "bsonType": "object",
+            "required": ["_id", "nombre", "descripcion", "estado", "created_by", "updated_by", "created_at","updated_at", "deleted_at"],
+            "properties": {
+                "_id": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'_id' el _id es incorrecto"
+                },
+                "nombre": {
+                    "bsonType": "string",
+                    "description": "'nombre' el nombre es incorrecto"
+                },
+                "descripcion": {
+                    "bsonType": "string",
+                    "description": "'descripcion' el descripcion es incorrecto"
+                },
+                "estado": {
+                    "bsonType":"number",
+                    "description": "'estado' el estado es incorrecto"
+                },
+                "created_by":{
+                    "bsonType":["null","number"],
+                    "description": "'created_by' el created_by es incorrecto"
+                },
+                "updated_by":{
+                    "bsonType": ["null","number"],
+                    "description": "'updated_by' el updated_by es incorrecto"
+                },
+                "created_at":{
+                    "bsonType": ["null","date"],
+                    "description": "'created_at' el created_at es incorrecto"
+                },
+                "updated_at": {
+                    "bsonType": ["null","date"],
+                    "description": "'updated_at' el updated_at es incorrecto"
+                },
+                "deleted_at": {
+                    "bsonType": ["null","date"],
+                    "description": "'deleted_at' el deleted_at es incorrecto"
+                }
+            }
+        }
+    }
+});
 db.productos.insertMany([
     {
         _id: 11,
