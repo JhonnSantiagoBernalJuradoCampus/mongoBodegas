@@ -47,7 +47,7 @@ router.get("/total", async (req,res)=>{
     res.send(productos);
     } catch (error) {
         console.error(error);
-        res.status(500).send("Error en el servidor");
+        res.status(500).send({message: "Error en el servidor"});
     }
 })
 

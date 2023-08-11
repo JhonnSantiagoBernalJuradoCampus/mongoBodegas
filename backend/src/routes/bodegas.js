@@ -13,7 +13,7 @@ router.get("/ordenado", async (req,res)=>{
         res.send(ordenados);
     } catch (error) {
         console.error(error);
-        res.status(500).send("Error en el servidor");
+        res.status(500).send({message: "Error en el servidor"});
     }
 });
 
@@ -23,11 +23,11 @@ router.post("/add", async (req,res)=>{
      * @var req.body
      * req.body = {
             "id": 51,
-            "nombre": 'bodega 1000',
+            "nombre": "bodega 1000",
             "id_responsable": 16,
             "estado": 1,
             "created_by": 16,
-            "updated_by": null,
+            "updated_by": null
         }
      */
     try {
@@ -49,7 +49,7 @@ router.post("/add", async (req,res)=>{
         res.status(201).send({message: "Agregado con exito"})
     } catch (error) {
         console.error(error);
-        res.status(500).send("Error en el servidor");
+        res.status(500).send({message: "Error en el servidor"});
     }
 })
 
