@@ -4,6 +4,14 @@ import { connectionDB } from "../../db/conexion.js";
 const router = Router();
 
 router.post("/add", async(req,res)=>{
+    /**
+     * @var {req.body}
+     * req.body = {
+     *  "id_bodega": 12,
+        "id_producto": 30,
+        "cantidad": 92
+     * }
+     */
     try {
         const db = await connectionDB();
         const inventario = db.collection("inventarios");
