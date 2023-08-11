@@ -14,3 +14,47 @@ db.bodegas.insertOne({
     updated_at: null,
     deleted_at: null
 });
+/**Realizar un EndPoint que permita listar todos los productos en orden
+descendente por el campo "Total".
+• El campo "Total" es la cantidad de unidades que la empresa tiene
+de este producto, considerando la unión de todas las bodegas, es
+decir que el dato como tal no existe en la base de datos,sino se debe
+calcular. Si la Bodega A tiene 1O unidades, la Bodega B tiene 5
+unidades y la Bodega C tiene 3 unidades. Total= 18. */
+use("db_bodegas");
+db.productos.aggregate([
+    {
+        $lookup: {
+            from: "inventarios",
+            localField: "_id",
+            foreignField: "id_producto",
+            as: "Total"
+        }
+    },
+    {
+        $match: {
+            "Total": { $ne: [] }
+        }
+    },
+    {
+        $unwind: "$Total"
+    },
+    {
+        $group: {
+            _id: "$_id",
+            nombre: { $first: "$nombre" },
+            descripcion: { $first: "$descripcion" },
+            estado: { $first: "$estado" },
+            created_by: { $first: "$created_by" },
+            created_at: { $first: "$created_at" },
+            updated_at: { $first: "$updated_at" },
+            deleted_at: { $first: "$deleted_at" },
+            Total: { $sum: "$Total.cantidad" }
+        }
+    },
+    {
+        $sort: {
+            "Total": -1
+        }
+    }
+]);
