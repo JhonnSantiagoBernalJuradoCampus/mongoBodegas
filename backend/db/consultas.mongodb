@@ -1,3 +1,16 @@
 /**Realizar un EndPolnt que permita listar todas las bodegas ordenadas alfabéticamente. */
 use("db_bodegas");
 db.bodegas.find().sort({nombre: 1});
+/**Realizar un EndPolnt que permita crear una bodegas.(agregar en los comentarios de la función los datos de entrada). */
+use("db_bodegas");
+db.bodegas.insertOne({
+    _id: 51,
+    nombre: 'bodega0',
+    id_responsable: 16,
+    estado: 1,
+    created_by: 16,
+    updated_by: null,
+    created_at: new Date(),
+    updated_at: null,
+    deleted_at: null
+});
