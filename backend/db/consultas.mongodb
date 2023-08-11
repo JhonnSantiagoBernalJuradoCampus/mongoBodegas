@@ -1,0 +1,3 @@
+/**Realizar un EndPolnt que permita listar todas las bodegas ordenadas alfabéticamente. */
+use("db_bodegas");
+db.bodegas.find().sort({nombre: 1});
