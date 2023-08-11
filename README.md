@@ -23,3 +23,18 @@ Ejercicio de bodegas para practicar mongo, se creo la base de datos según este 
 ## Get
 ### Endpoints
 1. `/bodegas/ordenado` Bodegas ordenadas alfabéticamente.
+## Post
+### Endpoints
+1. endpoint: `/bodegas/add`
+- Agregar bodega.
+- ejemplo datos a pasar en el **body**: 
+```json
+{
+    "id": 51,
+    "nombre": "bodega 1000",
+    "id_responsable": 16,
+    "estado": 1,
+    "created_by": 16,
+    "updated_by": null
+}
+```
