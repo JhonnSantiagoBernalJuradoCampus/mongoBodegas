@@ -28,7 +28,7 @@ Ejercicio de bodegas para practicar mongo, se creo la base de datos según este 
 ### Endpoints
 1. endpoint: `/bodegas/add`
 - Agregar bodega.
-- ejemplo datos a pasar en el **body**: 
+- ejemplo de datos a pasar en el **body**: 
 ```json
 {
     "id": 51,
@@ -37,5 +37,17 @@ Ejercicio de bodegas para practicar mongo, se creo la base de datos según este 
     "estado": 1,
     "created_by": 16,
     "updated_by": null
+}
+```
+2. endpoint: `/productos/add`
+- Agregar producto.
+- ejemplo de datos a pasar en el **body**
+```json
+{
+    "_id": 61,
+    "nombre": "producto100",
+    "descripcion": "producto10000",
+    "estado": 2,
+    "created_by": 20
 }
 ```

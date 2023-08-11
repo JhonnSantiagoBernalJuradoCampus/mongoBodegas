@@ -58,8 +58,8 @@ router.post("/add", async (req,res)=>{
         @var {req.body}
         req.body = {
             "_id": 61,
-            "nombre": 'producto100',
-            "descripcion": 'producto10000',
+            "nombre": "producto100",
+            "descripcion": "producto10000",
             "estado": 2,
             "created_by": 20
         }
