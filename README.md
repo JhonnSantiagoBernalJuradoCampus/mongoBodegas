@@ -23,6 +23,7 @@ Ejercicio de bodegas para practicar mongo, se creo la base de datos según este 
 ## Get
 ### Endpoints
 1. `/bodegas/ordenado` Bodegas ordenadas alfabéticamente.
+2. `/productos/total` Productos ordenados de manera descendente por el campo total.
 ## Post
 ### Endpoints
 1. endpoint: `/bodegas/add`

@@ -3,6 +3,7 @@ import { connectionDB } from "../../db/conexion.js";
 
 const router = Router();
 
+/**Mostrar los productos ordenados de manera descendente por el campo total*/
 router.get("/total", async (req,res)=>{
     try {
         const db = await connectionDB();
