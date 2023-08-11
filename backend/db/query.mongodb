@@ -5,7 +5,7 @@ db.createCollection("users", {
             "bsonType": "object",
             "required": ["_id", "nombre","email","email_verified_at","estado","created_by","updated_by","foto","password","created_at","updated_at","deleted_at"],
             "properties": {
-                "id": {
+                "_id": {
                     "bsonType": "number",
                     "minimum": 1,
                     "maximum": 100,
