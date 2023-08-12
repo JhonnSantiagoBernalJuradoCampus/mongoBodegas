@@ -1,5 +1,3 @@
-import { ObjectId } from "mongodb";
-
 use("db_bodegas");
 db.createCollection("users", {
     validator: {
@@ -1671,7 +1669,7 @@ db.createCollection("historiales",{
             "required": ["_id","cantidad","id_bodega_origen","id_bodega_destino","id_inventario","created_by","created_at","updated_at","deleted_at"],
             "properties": {
                 "_id": {
-                    "bsonType": "number",
+                    "bsonType": ["number", "objectId"],
                     "minimum": 1,
                     "maximum": 100,
                     "description": "'_id', el _id es incorrecto",
