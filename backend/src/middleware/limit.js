@@ -17,7 +17,7 @@ export let limit = ()=>{
         message: (req,res)=>{
             res.status(429).send({
                 status: 429,
-                message: "Pailasss"
+                message: "Ha sobre pasado el limite de consultas"
             });
         }
     })

@@ -1,10 +1,12 @@
 import { Router } from "express";
 import { connectionDB } from "../../db/conexion.js";
+import { limit } from "../middleware/limit.js";
 
 const router = Router();
 
 /**Mostrar los productos ordenados de manera descendente por el campo total*/
-router.get("/total", async (req,res)=>{
+router.get("/total", limit(), async (req,res)=>{
+    if(!req.rateLimit) return;
     try {
         const db = await connectionDB();
         const producto = db.collection("productos");
@@ -53,7 +55,7 @@ router.get("/total", async (req,res)=>{
 });
 
 /** Realizar un EndPoint que permita insertar un productos y a su vez asigne una cantidad inicial del mismo en la tabla inventarios en una de las bodegas por default.*/
-router.post("/add", async (req,res)=>{
+router.post("/add", limit(), async (req,res)=>{
     /**
         @var {req.body}
         req.body = {
@@ -64,6 +66,7 @@ router.post("/add", async (req,res)=>{
             "created_by": 20
         }
      */
+    if(!req.rateLimit) return;
     try {
         const db = await connectionDB();
         const producto = db.collection("productos");
@@ -116,7 +119,7 @@ a los dos registros en inventarios:
 Bodega A = 5 unidades. Bodega B = 15 unidades. Además hacer un
 lnsert con toda la
 información en la tabla de historiales.*/
-router.put("/traslado", async (req,res)=>{
+router.put("/traslado", limit(), async (req,res)=>{
     /**
      * @var {req.body}
     req.body = {
@@ -125,6 +128,7 @@ router.put("/traslado", async (req,res)=>{
         "id_bodega_destino": 12
     }
      */
+    if(!req.rateLimit) return;
     try {
         const db = await connectionDB();
         const historial = db.collection("historiales");

@@ -1,10 +1,12 @@
 import { Router } from "express";
 import { connectionDB } from "../../db/conexion.js";
+import { limit } from "../middleware/limit.js";
 
 const router = Router();
 
 /**Bodegas ordenadas alfabeticamente */
-router.get("/ordenado", async (req,res)=>{
+router.get("/ordenado", limit(), async (req,res)=>{
+    if(!req.rateLimit) return;
     try {
         const db = await connectionDB();
         const bodega = db.collection("bodegas");
@@ -18,7 +20,7 @@ router.get("/ordenado", async (req,res)=>{
 });
 
 /**Agregar bodega*/
-router.post("/add", async (req,res)=>{
+router.post("/add", limit(), async (req,res)=>{
     /**
      * @var req.body
      * req.body = {
@@ -30,6 +32,7 @@ router.post("/add", async (req,res)=>{
             "updated_by": null
         }
      */
+    if(!req.rateLimit) return;
     try {
         const db = await connectionDB();
         const bodega = db.collection("bodegas");

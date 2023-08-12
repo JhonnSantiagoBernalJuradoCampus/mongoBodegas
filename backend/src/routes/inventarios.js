@@ -1,10 +1,11 @@
 import { Router } from "express";
 import { connectionDB } from "../../db/conexion.js";
+import { limit } from "../middleware/limit.js";
 
 const router = Router();
 
 /**Agregar un inventario si no existe, y si existe actualizarlo*/
-router.post("/add", async(req,res)=>{
+router.post("/add", limit(), async(req,res)=>{
     /**
      * @var {req.body}
      * req.body = {
@@ -13,6 +14,7 @@ router.post("/add", async(req,res)=>{
         "cantidad": 92
      * }
      */
+    if(!req.rateLimit) return;
     try {
         const db = await connectionDB();
         const inventario = db.collection("inventarios");
