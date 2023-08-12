@@ -3,6 +3,7 @@ import { connectionDB } from "../../db/conexion.js";
 
 const router = Router();
 
+/**Agregar un inventario si no existe, y si existe actualizarlo*/
 router.post("/add", async(req,res)=>{
     /**
      * @var {req.body}

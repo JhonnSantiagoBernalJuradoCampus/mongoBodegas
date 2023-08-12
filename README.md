@@ -51,3 +51,25 @@ Ejercicio de bodegas para practicar mongo, se creo la base de datos según este 
     "created_by": 20
 }
 ```
+3. endpoint `/inventarios/add`
+- Agregar inventario, en caso de que ya exista se suma la cantidad
+- Ejemplo de datos a pasar en el **body**
+```json
+{
+    "id_bodega": 12,
+    "id_producto": 30,
+    "cantidad": 92
+}
+```
+- Ejemplo de datos de salida: en caso de que no exista:
+```json
+{
+    "message": "Agregado con exito"
+}
+```
+En caso de que ya exista:
+```json
+{
+    "message": "Actualizado con exito"
+}
+```
